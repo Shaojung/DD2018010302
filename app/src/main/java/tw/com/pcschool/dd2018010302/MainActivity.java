@@ -13,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wv = (WebView) findViewById(R.id.webView);
-        wv.setWebViewClient(new WebViewClient());
-        // wv.setWebChromeClient(new WebChromeClient());
+        // wv.setWebViewClient(new WebViewClient());
+        wv.setWebChromeClient(new WebChromeClient());
         wv.getSettings().setJavaScriptEnabled(true);
-        wv.loadUrl("http://www.youtube.com");
+        // wv.loadUrl("http://www.youtube.com");
+        wv.loadData("<iframe width=\"480\" height=\"300\" src=\"https://www.youtube.com/embed/JwjBbWQs71k\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen></iframe>", "text/html; charset=UTF-8", null);
 
     }
 }
